@@ -1,15 +1,13 @@
-#navbar {
-    background-color: bisque;
-}
+
 .navHighScore {
-    padding-left: 30px;
+    padding-left: 50px;
     text-align: left;
-    color: blue;
+    color: black;
 }
 #timer {
     padding-right: 0px;
-    text-align: right;
-    color: blue;
+    text-align: left;
+    color: black;
 }
 
 .container{
@@ -18,7 +16,7 @@
     align-content: center;
     text-align: center;
 }
-#divQuiz {
+#main {
     background-color: cadetblue;
     width: 600px;
     align-content: center;
