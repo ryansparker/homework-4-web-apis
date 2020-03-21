@@ -1,0 +1,28 @@
+#navbar {
+    background-color: bisque;
+}
+.navHighScore {
+    padding-left: 30px;
+    text-align: left;
+    color: blue;
+}
+#timer {
+    padding-right: 0px;
+    text-align: right;
+    color: blue;
+}
+
+.container{
+    width: 100%;
+    height: 100px;
+    align-content: center;
+    text-align: center;
+}
+#divQuiz {
+    background-color: cadetblue;
+    width: 600px;
+    align-content: center;
+    display: inline-block;
+}
+
+
