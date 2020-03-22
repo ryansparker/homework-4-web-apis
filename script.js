@@ -1,119 +1,119 @@
+var questions = [ 
+    {
+    title:"1. Inside which HTML element do we put the JavaScript?",
+    options: ["<script>", "<js>", "<javascript>", "<scripting>"],
+    answer: "<script>"
+    },
+    {
+    title:"2. How do you write \"Hello World\" in an alert box?",
+    options: ["msgBox(\"Hello World\")\;", "alertBox(\"Hello World\")\;", "msg(\"Hello World\")\;", "alert(\"Hello World\")\;"],
+    answer: "alert(\"Hello World\")\;"
+    },
+    {
+    title:"3.How do you create a function in JavaScript?",
+    options: ["function myFunction()", "function:myFunction()", "function = myFunction()"],
+    answer: "function myFunction()"
+    },
+    {
+    title:"4.How to write an IF statement in JavaScript?",
+    options: ["if i = 5 then", "if i = 5", "if (i == 5)", "if i == 5 then"],
+    answer: "if (i == 5)"
+    },
+    {
+    title:"5. How to write an IF statement for executing some code if \"i\" is NOT equal to 5?",
+    options: ["if i <> 5", "if (i != 5)", "if (i <> 5)", "if i =! 5 then"],
+    answer: "if (i != 5)"
+    },
+
+]
+
+
 // defined variables for timer
 var timerEl = document.getElementById("timer");
-var mainEl = document.getElementById("main");
-
+var startScreenEl = document.getElementById("startScreen");
+var questionEl = document.getElementById("questionScreen");
 var secondsLeft = 101;
+var timerInterval;
+var currentQuestionIndex = 0;
 
 // timer function
 function setTime() {
-    var timerInterval = setInterval(function() {
+    timerInterval = setInterval(function() {
       secondsLeft--;
       timerEl.textContent = "Timer: " + secondsLeft;
   
       if(secondsLeft === 0) {
         clearInterval(timerInterval);
-        sendMessage();
+        
       }
     }, 1000);
   }
-  function sendMessage() {
-    timerEl.textContent = "0";
   
-    var imgEl = document.createElement("img");
   
-    imgEl.setAttribute("src", "images/image_1.jpg");
-    mainEl.appendChild(imgEl);
-  }
-  setTime();
 
   //create elements for intro page
   var startPageEl = document.createElement("h1");
   var startPageSubEl = document.createElement("h2");
   var startBtn = document.createElement("button");
 
-//   //create elements for questions
-// //   question 1
-//   var pg1El = document.createElement("h2");
-//   var pg1Quest1El = createElement("button");
-//   var pg1Quest2El = createElement("button");
-//   var pg1Quest3El = createElement("button");
-//   var pg1Quest4El = createElement("button");
-
-// //   question 2
-//   var pg2El = document.createElement("h2");
-//   var pg2quest1El = document.createElement("button");
-//   var pg2quest2El = document.createElement("button");
-//   var pg2quest3El = document.createElement("button");
-//   var pg2quest4El = document.createElement("button");
-
-// //   question 3
-//   var pg3El = document.createElement("h2");
-//   var pg3quest1El = document.createElement("button");
-//   var pg3quest2El = document.createElement("button");
-//   var pg3quest3El = document.createElement("button");
-//   var pg3quest4El = document.createElement("button");
-
-// // question 4
-//   var pg4El = document.createElement("h2");
-//   var pg4quest1El = document.createElement("button");
-//   var pg4quest2El = document.createElement("button");
-//   var pg4quest3El = document.createElement("button");
-//   var pg4quest4El = document.createElement("button");
-
-// // question 5
-//   var pg5El = document.createElement("h2");
-//   var pg5quest1El = document.createElement("button");
-//   var pg5quest2El = document.createElement("button");
-//   var pg5quest3El = document.createElement("button");
-//   var pg5quest4El = document.createElement("button");
 
 // Set the text content of start page elements
   startPageEl.textContent = "Javascript Quiz";
   startPageSubEl.textContent = "Press the button to begin";
   startBtn.textContent = "Start";
 
-// // Set the text content of question 1 elements
-//   pg1El.textContent = "1. Inside which HTML element do we put the JavaScript?";
-//   pg1Quest1El.textContent = "<script>";
-//   pg1Quest2El.textContent = "<js>";
-//   pg1Quest3El.textContent = "<javascript>";
-//   pg1Quest4El.textContent = "<scripting>";
+
 
   // Append all of our start page elements
-  mainEl.append(startPageEl);
-  mainEl.append(startPageSubEl);
-  mainEl.append(startBtn);
+  startScreenEl.append(startPageEl);
+  startScreenEl.append(startPageSubEl);
+  startScreenEl.append(startBtn);
 
-// // Append all of our question 1 elements
-//   mainEl.append(pg1El);
-//   mainEl.append(pg1Quest1El);
-//   mainEl.append(pg1Quest2El);
-//   mainEl.append(pg1Quest3El);
-//   mainEl.append(pg1Quest4El);
 
   // Style all of our start page elements
   startPageEl.setAttribute("style", "margin-top:30px; width:100%; text-align:center;");
   startPageSubEl.setAttribute("style", "margin-top:20px; width:100%; text-align:center;");
   startBtn.setAttribute("style", "margin-top:40px; width:25%; text-align:center;");
 
-//    // Style all of our question 1 elements
-//   pg1El.setAttribute("style", "margin-top:20px; width:100%; text-align:center;");
-//   pg1Quest1El.setAttribute("style", "margin-top:40px; width:25%; text-align:center;");
-//   pg1Quest2El.setAttribute("style", "margin-top:40px; width:25%; text-align:center;");
-//   pg1Quest3El.setAttribute("style", "margin-top:40px; width:25%; text-align:center;");
-//   pg1Quest4El.setAttribute("style", "margin-top:40px; width:25%; text-align:center;");
 
 
   // button clicks to new page
   startBtn.addEventListener ("click", function(event) {
-  
+    setTime();
+    startScreenEl.setAttribute("class", "hide");
+    questionEl.removeAttribute("class");
     event.preventDefault();
+    getQuestion();
 
-    var response = "1st Question";
-    mainEl.textContent = response;
   });
   
+function getQuestion() {
 
-  //SIMON QUESTIONS:
-  //WHY () IS BLANK SOMETIMES?
-    //ASK SIMON WHAT PREVENT DEFAULT MEANS
+    var response = "1st Question";
+    questionEl.textContent = response;
+
+}
+
+
+ 
+
+
+
+
+    // start button clicked
+        //start the timer
+        //get question (make a getQuestion function)
+            //add html elements: title, possible answers (click event for the button which points to the option button clicks)
+
+    // option button clicks
+        //is the question correct, compare the choice the user made against the answer
+        //was it answered correctly? 
+        //if wrong, decrease the timer
+        //are there more questions?
+             //yes more questions: (call the getQuestion function)
+             //no more questions: call the final screen function
+        
+    // save button clicks for the end page
+        //collect the initials they entered
+        //create an array of key (initials) value (score) pairs, saved in local storage
+        //when finished, redirected to the high score page. Values come from local storage and are displayed on screen 
