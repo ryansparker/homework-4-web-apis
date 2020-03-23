@@ -19,22 +19,24 @@
             </div>
         </div>
     </nav>
-
+    <div class="container">
 <!-- this is the quiz container -->
-        <div class="container">
             <div id="main"> 
                 <div id="startScreen"></div>
                 <div id="questionScreen" class="hide">
-                    
-                        <div id="answer1"></div>
-                        <div id="answer2"></div>
-                        <div id="answer3"></div>
-                        <div id="answer4"></div>
-                    
+                    <div id="question">Question</div>
+                    <div id="answer-buttons">
+                      <button class="btn">Answer 1</button><br>
+                      <button class="btn">Answer 2</button><br>
+                      <button class="btn">Answer 3</button><br>
+                      <button class="btn">Answer 4</button>
+                    </div>
                 </div>
-                <div id="endScreen" class="hide">end</div>
+
+                <!-- <div id="questionScreen" class="hide">question</div>
+                <div id="endScreen" class="hide">end</div> -->
             </div>
-        </div>
+    </div>
 
 <!-- javascript here -->
 <script src="./script.js"></script>

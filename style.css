@@ -26,4 +26,12 @@
     display: none;
 }
 
+.btn {
+    background-color: aquamarine;
+    margin: 10px;
+}
 
+.btn:hover {
+    background-color: blue;
+    color: white;
+}
