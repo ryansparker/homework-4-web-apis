@@ -43,6 +43,7 @@ var button3 = document.getElementById("btn3");
 var button4 = document.getElementById("btn4");
 var rightAnswer = document.getElementById("right");
 var wrongAnswer = document.getElementById("wrong");
+var endScreen = document.getElementById("endScreen");
 
 // timer function
 function setTime() {
@@ -86,10 +87,11 @@ function setTime() {
     startScreen.setAttribute("class", "hide");
     questionScreen.removeAttribute("class", "hide");
     event.preventDefault();
-    getQuestion();
+    nextQuestion1();
   });
   
-function getQuestion() {
+
+function nextQuestion1() {
   questionElement.innerText = questions[0].question;
   button1.innerText = questions[0].options[0];
   button2.innerText = questions[0].options[1];
@@ -98,31 +100,127 @@ function getQuestion() {
   
   button1.addEventListener ("click", function(event) {
     rightAnswer.removeAttribute("class", "hide");
-    nextQuestion();
+    nextQuestion2();
   })
-
-  // var button = document.createElement("button");
- 
-  // questions.options.forEach(answer => {
-    
-    // button.innerText = options.text;
-    // button.classList.add('btn');
-    // button.addEventListener("click", nextQuestion);
-    // answerButtonsElement.appendChild(button);
-  // })
+  button2.addEventListener ("click", function(event) {
+    wrongAnswer.removeAttribute("class", "hide");
+    nextQuestion2();
+  })
+  button3.addEventListener ("click", function(event) {
+    wrongAnswer.removeAttribute("class", "hide");
+    nextQuestion2();
+  })
+  button4.addEventListener ("click", function(event) {
+    wrongAnswer.removeAttribute("class", "hide");
+    nextQuestion2();
+  })
 }
 
-function nextQuestion() {
+function nextQuestion2() {
   questionElement.innerText = questions[1].question;
   button1.innerText = questions[1].options[0];
   button2.innerText = questions[1].options[1];
   button3.innerText = questions[1].options[2];
   button4.innerText = questions[1].options[3];
+
+  button1.addEventListener ("click", function(event) {
+    wrongAnswer.removeAttribute("class", "hide");
+    nextQuestion3();
+  })
+  button2.addEventListener ("click", function(event) {
+    wrongAnswer.removeAttribute("class", "hide");
+    nextQuestion3();
+  })
+  button3.addEventListener ("click", function(event) {
+    wrongAnswer.removeAttribute("class", "hide");
+    nextQuestion3();
+  })
+  button4.addEventListener ("click", function(event) {
+    rightAnswer.removeAttribute("class", "hide");
+    wrongAnswer.removeAttribute("class", "hide");
+    nextQuestion3();
+  })
+
 }
 
-function showQuestion(question) {
-  
+function nextQuestion3() {
+  questionElement.innerText = questions[2].question;
+  button1.innerText = questions[2].options[0];
+  button2.innerText = questions[2].options[1];
+  button3.innerText = questions[2].options[2];
+  button4.innerText = questions[2].options[3];
 
+  button1.addEventListener ("click", function(event) {
+    rightAnswer.removeAttribute("class", "hide");
+    nextQuestion4();
+  })
+  button2.addEventListener ("click", function(event) {
+    wrongAnswer.removeAttribute("class", "hide");
+    nextQuestion4();
+  })
+  button3.addEventListener ("click", function(event) {
+    wrongAnswer.removeAttribute("class", "hide");
+    nextQuestion4();
+  })
+  button4.addEventListener ("click", function(event) {
+    wrongAnswer.removeAttribute("class", "hide");
+    nextQuestion4();
+  })
+}
+
+function nextQuestion4() {
+  questionElement.innerText = questions[3].question;
+  button1.innerText = questions[3].options[0];
+  button2.innerText = questions[3].options[1];
+  button3.innerText = questions[3].options[2];
+  button4.innerText = questions[3].options[3];
+
+  button1.addEventListener ("click", function(event) {
+    wrongAnswer.removeAttribute("class", "hide");
+    nextQuestion5();
+  })
+  button2.addEventListener ("click", function(event) {
+    rightAnswer.removeAttribute("class", "hide");
+    nextQuestion5();
+  })
+  button3.addEventListener ("click", function(event) {
+    wrongAnswer.removeAttribute("class", "hide");
+    nextQuestion5();
+  })
+  button4.addEventListener ("click", function(event) {
+    wrongAnswer.removeAttribute("class", "hide");
+    nextQuestion5();
+  })
+}
+
+function nextQuestion5() {
+  questionElement.innerText = questions[4].question;
+  button1.innerText = questions[4].options[0];
+  button2.innerText = questions[4].options[1];
+  button3.innerText = questions[4].options[2];
+  button4.innerText = questions[4].options[3];
+
+  button1.addEventListener ("click", function(event) {
+    wrongAnswer.removeAttribute("class", "hide");
+    endingScreen();
+  })
+  button2.addEventListener ("click", function(event) {
+    rightAnswer.removeAttribute("class", "hide");
+    endingScreen();
+  })
+  button3.addEventListener ("click", function(event) {
+    wrongAnswer.removeAttribute("class", "hide");
+    endingScreen();
+  })
+  button4.addEventListener ("click", function(event) {
+    wrongAnswer.removeAttribute("class", "hide");
+    endingScreen();
+  })
+}
+
+function endingScreen() {
+endScreen.removeAttribute("class", "hide");
+questionScreen.setAttribute("class", "hide");
 }
 
 
